@@ -1,130 +1,125 @@
 <template>
-
-	<header class="headerContainer">
-		<div class="headerDivContainer">
-			<div class="innerContainer">
-				<div class="leftGroup"> 
-                        <a href="" class="logoContainer"><img src="../assets//emblem-oly.svg" class="logoImg"></a>
-                        <a class="topButton" href="">Home Page</a>
-						<a class="topButton" href="">Torch Relay</a>
-						<a class="topButton" href="">Athletes Map</a>
-						<a class="topButton" href="">Paris Hospitality</a>
-				</div>
-			</div>
-		</div>
-	</header>
-
+  <header :class="headerClass">
+    <div class="headerDivContainer">
+      <div class="innerContainer">
+        <div class="leftGroup">
+          <router-link to="/" class="logoContainer">
+            <img src="../assets/emblem-oly.svg" class="logoImg">
+          </router-link>
+          <router-link class="topButton" to="/">Home Page</router-link>
+          <router-link class="topButton" to="/torch-relay">Torch Relay</router-link>
+          <router-link class="topButton" to="/athletes-map">Athletes Map</router-link>
+          <router-link class="topButton" to="/paris-hospitality">Paris Hospitality</router-link>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
-  
+
 <script>
-  export default {
-    name: 'TopMenu',
-    data() {
-      return {
-        activeIndex: '1'
-      }
-    },
-    methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
+export default {
+  name: 'TopMenu',
+  computed: {
+    headerClass() {
+      return this.$route.path === '/' ? 'headerContainer' : 'headerContainer withBackground';
     }
   }
+}
 </script>
-  
+
 <style scoped>
-  .headerContainer {
-        background-size: cover;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        z-index: 13;
-        background-color: transparent;
-        position: absolute;
-        width: 100%;
-    }
+.headerContainer {
+  background-size: cover;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  z-index: 13;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+}
 
-    .headerDivContainer {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-        width: 100%;
-        padding: 2.4rem;
-    }
+.withBackground {
+  background-image: url("../assets/background_topmenu.svg");
+}
 
-    .innerContainer {
-        color: rgb(0, 0, 0);
-        font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-        font-size: 2rem;
-        line-height: 2.8rem;
-        align-items: flex-start;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
+.headerDivContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.4rem;
+}
 
-    .leftGroup {
-        display: flex;
-        gap: 0.8rem;
-        justify-content: left;
-        width: calc(33.3333%);
-        margin-left: 15px;
-    }
+.innerContainer {
+  color: rgb(0, 0, 0);
+  font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-    .topButton {
-        color:black;
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-        text-decoration: none;
-        font-size: 2rem;
-        line-height: 2.4rem;
-        align-items: center;
-        background-color: rgb(255, 255, 255);
-        border: none;
-        border-radius: 5.8rem;
-        box-sizing: border-box;
-        cursor: pointer;
-        display: flex;
-        font-weight: 700;
-        height: 6rem;
-        justify-content: center;
-        padding: 0 1.6rem;
-        text-transform: uppercase;
-        white-space: nowrap;
-        z-index: 1;
-        margin: 20px;
-    }
+.leftGroup {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: left;
+  width: calc(33.3333%);
+  margin-left: 15px;
+}
 
-    .logoContainer {
-        font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-        font-size: 2rem;
-        line-height: 2.8rem;
-        color: currentColor;
-        text-decoration: none;
-        z-index: 1;
-    }
+.topButton {
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5.8rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 6rem;
+  justify-content: center;
+  padding: 0 1.6rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 1;
+  margin: 20px;
+}
 
-    .logoImg {
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-        font-size: 2rem;
-        line-height: 2.8rem;
-        color: currentColor;
-        pointer-events: none;
-        position: relative;
-        width: auto;
-        height: 12rem;
-    }
+.logoContainer {
+  font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  color: currentColor;
+  text-decoration: none;
+  z-index: 1;
+}
 
-
-    
+.logoImg {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  color: currentColor;
+  pointer-events: none;
+  position: relative;
+  width: auto;
+  height: 12rem;
+}
 </style>
-  
