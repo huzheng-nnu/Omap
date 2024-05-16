@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@arcgis/core": "^4.29.10",
     "core-js": "^3.8.3",
     "element-plus": "^2.7.3",
     "swiper": "^11.1.3",
