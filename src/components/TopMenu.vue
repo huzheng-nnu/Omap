@@ -51,7 +51,7 @@ export default {
   height: 100%;
   justify-content: space-between;
   width: 100%;
-  padding: 2.4rem;
+  padding: 1.2rem;
 }
 
 .innerContainer {
@@ -81,8 +81,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  font-size: 2rem;
-  line-height: 2.4rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   align-items: center;
   background-color: rgb(255, 255, 255);
   border: none;
@@ -91,21 +91,22 @@ export default {
   cursor: pointer;
   display: flex;
   font-weight: 700;
-  height: 6rem;
+  height: 3rem;
   justify-content: center;
   padding: 0 1.6rem;
   text-transform: uppercase;
   white-space: nowrap;
   z-index: 1;
-  margin: 20px;
+  /* margin: 20px; */
+  margin-top:5px;
 }
 
 .logoContainer {
   font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
-  font-size: 2rem;
-  line-height: 2.8rem;
+  /* font-size: 2rem;
+  line-height: 2.8rem; */
   color: currentColor;
   text-decoration: none;
   z-index: 1;
@@ -120,6 +121,6 @@ export default {
   pointer-events: none;
   position: relative;
   width: auto;
-  height: 12rem;
+  height: 6rem;
 }
 </style>

@@ -136,7 +136,7 @@ export default {
     width: auto;
     /* transform: translateX(-400px); */
     transform: translateX(-20%);
-    margin-top: 20%;
+    margin-top: 15%;
   /* width: 50%; */
 
 }
@@ -156,16 +156,16 @@ export default {
     padding: 0px;
     vertical-align: baseline;
     font-family: "Paris 2024", "Olympic Headline", Helvetica, sans-serif;
-    font-size: 5.2rem;
+    font-size: 2.5rem;
     font-weight: 900;
-    line-height: 5.2rem;
+    line-height: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     color: rgb(255, 255, 255);
     display: inline-block;
     -webkit-line-clamp: 5;
     margin-top: 1.6rem;
-    width: 50%;
+    width: 40%;
     z-index: 1;
 }
 
@@ -185,7 +185,7 @@ export default {
     padding: 0px;
     position: relative;
     width: fit-content;
-    height: 4.8rem;
+    height: 3rem;
     margin-top: 4rem;
     border-color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
@@ -196,19 +196,13 @@ export default {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     border: 0px;
-    /* font-variant: inherit;
-    font-stretch: inherit;
-    font-optical-sizing: inherit;
-    font-kerning: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit; */
     margin: 0px;
     vertical-align: baseline;
     font-family: "Olympic Sans";
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 700;
-    line-height: 1.6rem;
+    line-height: 1rem;
     padding: 1.6rem 1.2rem;
     color: rgb(0, 0, 0);
 }
@@ -234,7 +228,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     font-size: 2rem;
-    line-height: 2.8rem;
+    line-height: 2.2rem;
     color: currentcolor;
     cursor: pointer;
 }
@@ -311,8 +305,8 @@ export default {
 }
 
   ::v-deep .el-carousel__button{
-    --el-carousel-indicator-width: 250px;
-    --el-carousel-indicator-height: 20px;
+    --el-carousel-indicator-width: 180px;
+    --el-carousel-indicator-height: 15px;
     margin-bottom:2%;
   }
 
