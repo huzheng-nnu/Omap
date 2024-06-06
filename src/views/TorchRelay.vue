@@ -32,7 +32,7 @@
   
             <!-- right -->
             <div class="rightDiv">
-              <MapboxMap />
+              <MapboxMap :geojson-data="chinamap" />
             </div>
           </div>
         </div>
@@ -43,14 +43,20 @@
   <script>
   import TopMenu from '@/components/TopMenu.vue'
   import MapboxMap from '@/components/MapboxMap.vue';
+  import CHINAMAP from '@/assets/奥运会比赛路线.geojson'
   
   export default {
-    name: 'TorchRelay',
-    components: {
-      TopMenu,
-      MapboxMap
-    }
+  name: 'TorchRelay',
+  components: {
+    TopMenu,
+    MapboxMap
+  },
+  data() {
+    return {
+      chinamap: CHINAMAP
+    };
   }
+};
   </script>
   
   <style scoped>
