@@ -25,8 +25,8 @@ export default {
 
     // 设置地图范围为法国
     const bounds = [
-      [-5.138, 41.333], // Southwest coordinates
-      [9.663, 51.124]  // Northeast coordinates
+      [ -5.138, 41.333 ], // Southwest coordinates
+      [ 9.663, 51.124 ]  // Northeast coordinates
     ];
     map.fitBounds(bounds);
 
@@ -60,17 +60,19 @@ export default {
 
       var popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
       });
 
       map.on('mousemove', 'custom-geojson-layer', (e) => {
         map.getCanvas().style.cursor = 'pointer';
 
+        const latLongData = [e.lngLat.lng, e.lngLat.lat];
+
         if (e.features.length > 0) {
           const feature = e.features[0];
-          console.log(e.lngLat)
+          console.log(feature); // 调试输出feature对象
           popup
-            .setLngLat(e.lngLat)
+            .setLngLat(latLongData)
             .setHTML(
               `<div class="hover-popup">
                 <div style="font-size:14px; color:#333">
@@ -81,8 +83,6 @@ export default {
               </div>`
             )
             .addTo(map);
-          // 不知道为什么会出现位置错位，直接添加了600px的偏移
-          popup.setOffset([0, -600]);
         } else {
           popup.remove();
         }
@@ -113,11 +113,5 @@ export default {
 
 .mapboxgl-ctrl-attrib-inner{
   display: none;
-}
-
-.hover-popup {
-  position: relative;
-  pointer-events: none;
-  background-color: white;
 }
 </style>
