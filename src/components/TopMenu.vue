@@ -8,7 +8,7 @@
           </router-link>
           <router-link class="topButton" to="/">Home Page</router-link>
           <router-link class="topButton" to="/torch-relay">Torch Relay</router-link>
-          <router-link class="topButton" to="/athletes-map">Athletes Map</router-link>
+          <router-link class="topButton" to="/athlete-page">Athletes Map</router-link>
           <router-link class="topButton" to="/paris-hospitality">Paris Hospitality</router-link>
         </div>
       </div>
