@@ -12,6 +12,7 @@
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
     "d3-dsv": "^3.0.1",
+    "echarts": "^5.5.0",
     "element-plus": "^2.7.3",
     "esri-loader": "^3.7.0",
     "mapbox-gl": "^3.3.0",

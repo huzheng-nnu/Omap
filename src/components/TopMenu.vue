@@ -6,10 +6,10 @@
           <router-link to="/" class="logoContainer">
             <img src="../assets/emblem-oly.svg" class="logoImg">
           </router-link>
-          <router-link class="topButton" to="/">Home Page</router-link>
-          <router-link class="topButton" to="/torch-relay">Torch Relay</router-link>
-          <router-link class="topButton" to="/athlete-page">Athletes Map</router-link>
-          <router-link class="topButton" to="/paris-hospitality">Paris Hospitality</router-link>
+          <router-link class="topButton" to="/">主页</router-link>
+          <router-link class="topButton" to="/torch-relay">火炬传递</router-link>
+          <router-link class="topButton" to="/athlete-page">奥运预选赛</router-link>
+          <router-link class="topButton" to="/paris-hospitality">历史数据</router-link>
         </div>
       </div>
     </div>
