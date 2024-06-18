@@ -57,7 +57,7 @@ export default {
 
 .front {
   z-index: 1;
-  position: absolute;
+  position: flex;
   width: 100%;
   height: 100%;
   display: flex;
