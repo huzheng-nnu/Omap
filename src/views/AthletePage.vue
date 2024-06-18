@@ -171,7 +171,7 @@ export default {
 
 .front {
   z-index: 1;
-  position: absolute;
+  position: flex;
   width: 100%;
   height: 100%;
   display: flex;
@@ -184,7 +184,7 @@ export default {
   align-items: center;
   width: 80%;
   height: 70%;
-  margin-top: 10%;
+  margin-top: 11%;
   flex-direction: column;
 }
 
