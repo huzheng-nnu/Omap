@@ -13,6 +13,7 @@
               <div class="contentDiv">
                 <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
                 <h2 class="titleText" lang="en" style="color:black;">性别平等之路</h2>
+                <hr>
                 <div class="contentText">
                   <section class="contentSection" style="color:black;">
                     <p style="text-indent: 2em;">
@@ -20,7 +21,7 @@
                     </p>
 
                     <p style="text-indent: 2em;"> 
-                      2012年伦敦奥运会是第一届所有国家和地区奥委会代表团都至少包含一名女性运动员的奥运赛会，其中文莱、沙特阿拉伯和卡塔尔代表团首次有女性运动员加入。 然而，在所有206个国家和地区奥委会代表团中至少有一名男性运动员和一名女性运动员这一里程碑式的情况未曾出现在过往任何一届奥运会。 近期还出台了一系列有助于推动2020年东京奥运会比赛项目和运动员名额方面性别平衡的决定。 皮划艇、赛艇、射击和举重这四项运动的国际联合会将首次推进性别平衡赛事。 在分项方面，小轮车竞速、山地自行车和自由式摔跤将实现性别平衡。
+                      2012年伦敦奥运会是第一届所有国家和地区奥委会代表团都至少包含一名女性运动员的奥运赛会，其中文莱、沙特阿拉伯和卡塔尔代表团首次有女性运动员加入。 然而，在所有206个国家和地区奥委会代表团中至少有一名男性运动员和一名女性运动员这一里程碑式的情况未曾出现在过往任何一届奥运会。 
                     </p>
                   </section>
                 </div>
@@ -29,7 +30,7 @@
           </div>
 
           <!-- right -->
-          <div class="rightDiv" style="margin-top: 10%;">
+          <div class="rightDiv" style="margin-top: 8%;">
             <GenderPlot jsonFile="/Archive/gender.json" />
           </div>
         </div>
@@ -42,6 +43,7 @@
               <div class="contentDiv">
                 <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
                 <h2 class="titleText" lang="en" style="color:black;">更丰富的比赛项目</h2>
+                <hr>
                 <div class="contentText">
                   <section class="contentSection" style="color:black;">
                     <p style="text-indent: 2em;">
@@ -72,6 +74,7 @@
               <div class="contentDiv">
                 <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
                 <h2 class="titleText" lang="en" style="color:black;">金牌总数</h2>
+                <hr>
                 <div class="contentText">
                   <section class="contentSection" style="color:black;">
                     <p style="text-indent: 2em;">

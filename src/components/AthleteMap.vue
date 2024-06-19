@@ -39,7 +39,20 @@ export default {
             label: {
               show: false
             },
-            data: []
+            data: [],
+            emphasis: {
+              label: {
+                show: false,
+                color: '#fff'
+              },
+              itemStyle: {
+                areaColor: 'rgba(255, 87, 87, 0.5)',
+                borderColor: '#570047', // 设置边框高亮颜色
+                borderWidth: 3          // 设置边框宽度
+              },
+              // zoom: 1.4,  // 初始缩放级别
+              // roam: false  // 允许缩放和平移
+            }
           }
         ]
       }
@@ -55,7 +68,7 @@ export default {
   },
   methods: {
     loadMapData() {
-      fetch('/world.zh.json')
+      fetch('/worldNA.json')
         .then(response => response.json())
         .then(data => {
           echarts.registerMap('world.zh', data);
