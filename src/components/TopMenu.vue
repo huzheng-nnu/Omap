@@ -121,6 +121,6 @@ export default {
   pointer-events: none;
   position: relative;
   width: auto;
-  height: 6rem;
+  height: 5rem;
 }
 </style>

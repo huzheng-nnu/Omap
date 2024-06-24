@@ -276,7 +276,7 @@ export default {
 .contentSection {
   color: rgb(255, 255, 255);
   font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2rem;
   --box-background: linear-gradient(0deg, #FF5757 0%, #570047 100%);
   margin: 0px auto;
@@ -330,7 +330,7 @@ export default {
 }
 
 ::v-deep .el-tabs .el-tabs__item {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color:grey;
 }
