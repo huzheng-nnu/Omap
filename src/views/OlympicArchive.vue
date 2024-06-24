@@ -12,7 +12,7 @@
             <div class="imgContainer">
               <div class="contentDiv">
                 <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
-                <h2 class="titleText" lang="en" style="color:black;">性别平等之路</h2>
+                <h2 class="titleText" lang="en" style="color:black;">性别平等</h2>
                 <hr>
                 <div class="contentText">
                   <section class="contentSection" style="color:black;">
@@ -30,7 +30,7 @@
           </div>
 
           <!-- right -->
-          <div class="rightDiv" style="margin-top: 8%;">
+          <div class="rightDiv" style="margin-top: 12%;">
             <GenderPlot jsonFile="/Archive/gender.json" />
           </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="imgContainer">
               <div class="contentDiv">
                 <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
-                <h2 class="titleText" lang="en" style="color:black;">更丰富的比赛项目</h2>
+                <h2 class="titleText" lang="en" style="color:black;">缤纷赛事</h2>
                 <hr>
                 <div class="contentText">
                   <section class="contentSection" style="color:black;">
@@ -60,7 +60,7 @@
           </div>
 
           <!-- right -->
-          <div class="rightDiv" style="margin-top: 5%;">
+          <div class="rightDiv" style="margin-top: 10%;">
             <EventPlot jsonFile="/Archive/events.json" />
           </div>
         </div>
@@ -215,7 +215,7 @@ export default {
   padding: 0px;
   vertical-align: baseline;
   font-family: "Paris 2024", "Olympic Headline", Helvetica, sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 2.5rem;
   text-transform: uppercase;
