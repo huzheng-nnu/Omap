@@ -184,7 +184,7 @@ export default {
   align-items: center;
   width: 80%;
   height: 70%;
-  margin-top: 11%;
+  margin-top: 10%;
   flex-direction: column;
 }
 
@@ -256,7 +256,7 @@ export default {
   padding: 0px;
   vertical-align: baseline;
   font-family: "Paris 2024", "Olympic Headline", Helvetica, sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 2.5rem;
   text-transform: uppercase;
@@ -276,7 +276,7 @@ export default {
 .contentSection {
   color: rgb(255, 255, 255);
   font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   --box-background: linear-gradient(0deg, #FF5757 0%, #570047 100%);
   margin: 0px auto;
