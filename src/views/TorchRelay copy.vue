@@ -9,12 +9,11 @@
         <div class="sectionContainer2">
           <!-- left -->
           <div class="leftDiv">
-         
+            <TorchRelayChart :jsonFile="geoJsonUrl" />
           </div>
           <!-- right -->
           <div class="rightDiv">
             <TorchMap/>
-            
           </div>
                 <!-- 在这里添加按钮 -->
                 
@@ -27,7 +26,7 @@
 <script>
 import TopMenu from '@/components/TopMenu.vue';
 import TorchMap from '@/components/TorchMap.vue';
-
+import TorchRelayChart from '@/components/TorchRelayChart.vue';
 
 
 export default {
@@ -35,7 +34,7 @@ export default {
   components: {
     TopMenu,
     TorchMap,
-
+    TorchRelayChart
   },
   data() {
     return {
