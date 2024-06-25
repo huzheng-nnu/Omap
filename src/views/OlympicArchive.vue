@@ -99,6 +99,40 @@
 
 
 
+
+
+        <div class="sectionContainer2">
+          <!-- left -->
+          <div class="leftDiv">
+            <div class="imgContainer">
+              <div class="contentDiv">
+                <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
+                <h2 class="titleText" lang="en" style="color:black;">城市记忆</h2>
+                <hr>
+                <div class="contentText">
+                  <section class="contentSection" style="color:black;">
+                    <p style="text-indent: 2em;">
+                      每一届奥运会的举办城市不仅是赛事的承办者，更是世界目光的焦点。这些城市在奥运会期间，不仅展示了其独特的文化和历史，还通过卓越的基础设施和组织能力，向世界传递了友谊与和平的奥林匹克精神。
+                    </p>
+
+                    <p style="text-indent: 2em;"> 
+                      对于举办城市而言，奥运会不仅是一场体育盛宴，更是一次提升城市形象、促进旅游和投资的绝佳机会。通过举办奥运会，这些城市在全球范围内展示了其独特的魅力与活力，留下了无数令人难忘的精彩瞬间。每一届奥运会结束后，举办城市都将继续前行，凭借其在奥运会期间积累的宝贵经验和国际声誉，迈向更加辉煌的未来。
+                    </p>
+
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right -->
+          <div class="rightDiv" style="margin-top: 8%; margin-bottom: 5%;">
+            <CityMap />
+          </div>
+        </div>
+
+
+
       </div>
 
 
@@ -119,6 +153,7 @@ import TopMenu from '@/components/TopMenu.vue';
 import GenderPlot from '@/components/GenderPlot.vue';
 import EventPlot from '@/components/EventPlot.vue';
 import MedalMap from '@/components/MedalMap.vue';
+import CityMap from '@/components/CityMap.vue';
 
 export default {
   name: 'OlympicArchive',
@@ -126,7 +161,8 @@ export default {
     TopMenu,
     GenderPlot,
     EventPlot,
-    MedalMap
+    MedalMap,
+    CityMap
   },
   data() {
     return {
