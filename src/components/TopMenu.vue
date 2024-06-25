@@ -4,7 +4,8 @@
       <div class="innerContainer">
         <div class="leftGroup">
           <router-link to="/" class="logoContainer">
-            <img src="../assets/emblem-oly.svg" class="logoImg">
+            <!-- <img src="../assets/emblem-oly.svg" class="logoImg"> -->
+            <img src="../assets/logo_color.svg" class="logoImg">
           </router-link>
           <router-link class="topButton" to="/">主页</router-link>
           <router-link class="topButton" to="/torch-relay">火炬传递</router-link>
@@ -113,6 +114,7 @@ export default {
 }
 
 .logoImg {
+  margin-top: 5px;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   font-size: 2rem;
@@ -121,6 +123,6 @@ export default {
   pointer-events: none;
   position: relative;
   width: auto;
-  height: 5rem;
+  height: 3rem;
 }
 </style>

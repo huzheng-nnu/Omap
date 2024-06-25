@@ -15,9 +15,12 @@
 				<el-carousel-item>
           <div class="imgContainer1"></div>
           <div class="frontImg">
-            <div class="titleContainer">
+            <div class="titleContainer" style="margin-top: 12%;">
+                <img src="../assets/bigLogo.png" class="logoImg">
+                <span class="titleText">2024巴黎奥运会可视化平台</span>
                 <span class="titleText">Visualization platform for Olympics Games Paris 2024</span>
-                <a data-cy="link" class="learMoreGroup" href="https://olympics.com/en/paris-2024/olympic-torch-relay" role="button" aria-label="">
+                <!-- <span class="titleText">探索2024巴黎奥运会的火炬传递路线、预选赛情况,以及历届奥运会的历史数据。</span> -->
+                <!-- <a data-cy="link" class="learMoreGroup" href="https://olympics.com/en/paris-2024/olympic-torch-relay" role="button" aria-label="">
                   <p class="learnText">
                     <span>Learn more about this</span>
                   </p>
@@ -26,7 +29,7 @@
                       <i class="iconArrowImg"></i>
                     </span>
                   </span>
-                </a>
+                </a> -->
               </div>
           </div>
 				</el-carousel-item>
@@ -35,18 +38,23 @@
         <el-carousel-item>
           <div class="imgContainer2"></div>
           <div class="frontImg">
-            <div class="titleContainer" >
-                <span class="titleText">Visualization platform for Olympics Games Paris 2024 Page2</span>
-                <a data-cy="link" class="learMoreGroup" href="https://olympics.com/en/paris-2024/olympic-torch-relay" role="button" aria-label="">
-                  <p class="learnText">
-                    <span>Learn more about this</span>
-                  </p>
-                  <span class="buttonIcon">
-                    <span data-cy="icon-arrow-right" class="iconArrow">
-                      <i class="iconArrowImg"></i>
+            <div class="titleContainer" style="transform: translateX(-30%);margin-top: 13%;">
+                <span class="titleText">奥运火炬传递路线</span>
+                <span class="titleText">Olympic Torch Relay</span>
+                <hr>
+
+                <span class="titleText" style="font-size: 1.5rem;">-查看巴黎奥运火炬传递地图-</span>
+                
+                <router-link data-cy="link" class="learMoreGroup" to="/torch-relay" role="button" aria-label="">
+                    <p class="learnText">
+                      <span>探索更多</span>
+                    </p>
+                    <span class="buttonIcon">
+                      <span data-cy="icon-arrow-right" class="iconArrow">
+                        <i class="iconArrowImg"></i>
+                      </span>
                     </span>
-                  </span>
-                </a>
+                  </router-link>
               </div>
           </div>
 				</el-carousel-item>
@@ -56,22 +64,69 @@
           <div class="imgContainer3"></div>
 
           <div class="frontImg">
-              <div class="titleContainer">
-                <span class="titleText">Visualization platform for Olympics Games Paris 2024 Page3</span>
+              <div class="titleContainer" style="transform: translateX(-30%);margin-top: 13%;">
+                <span class="titleText">奥运预选赛</span>
+                <span class="titleText">Olympic Qualifying Tournament</span>
+                <hr>
+                <span class="titleText" style="font-size: 1.5rem;">-查看巴黎奥运预选赛参赛选手与分布地图-</span>
+                <!-- <span class="titleText" style="font-size: 1.5rem;">-探索性别平等、赛事发展等主题-</span> -->
+                <router-link data-cy="link" class="learMoreGroup" to="/athlete-page" role="button" aria-label="">
+                    <p class="learnText">
+                      <span>探索更多</span>
+                    </p>
+                    <span class="buttonIcon">
+                      <span data-cy="icon-arrow-right" class="iconArrow">
+                        <i class="iconArrowImg"></i>
+                      </span>
+                    </span>
+                  </router-link>
+              </div>
+          </div>
+          
+				</el-carousel-item>
+
+
+        <el-carousel-item>
+          <div class="imgContainer4"></div>
+
+          <div class="frontImg">
+              <div class="titleContainer" style="transform: translateX(-30%);margin-top: 13%;" >
+                <span class="titleText">奥运档案馆</span>
+                <span class="titleText">Olympic Archive</span>
+                <hr>
+                <span class="titleText" style="font-size: 1.5rem;">-探索与挖掘奥运历史数据-</span>
+                <span class="titleText" style="font-size: 1.5rem;">-探索性别平等、赛事发展等主题-</span>
+
+                <router-link data-cy="link" class="learMoreGroup" to="/olympic-archive" role="button" aria-label="">
+                    <p class="learnText">
+                      <span>探索更多</span>
+                    </p>
+                    <span class="buttonIcon">
+                      <span data-cy="icon-arrow-right" class="iconArrow">
+                        <i class="iconArrowImg"></i>
+                      </span>
+                    </span>
+                  </router-link>
+<!-- 
                 <a data-cy="link" class="learMoreGroup" href="https://olympics.com/en/paris-2024/olympic-torch-relay" role="button" aria-label="">
                   <p class="learnText">
-                    <span>Learn more about this</span>
+                    <span>探索更多</span>
                   </p>
                   <span class="buttonIcon">
                     <span data-cy="icon-arrow-right" class="iconArrow">
                       <i class="iconArrowImg"></i>
                     </span>
                   </span>
-                </a>
+                </a> -->
               </div>
           </div>
           
 				</el-carousel-item>
+
+
+
+
+
 			</el-carousel>
 		</div>
 
@@ -300,7 +355,17 @@ export default {
   background-image: url('../assets/background3.avif');
   background-size: cover; /* 拉伸以填充容器 */
   position: absolute;
-  filter: brightness(80%);
+  filter: brightness(70%);
+  /* z-index:-1; */
+}
+
+.imgContainer4{
+  width:100%;
+  height:100%;
+  background-image: url('../assets/background4.avif');
+  background-size: cover; /* 拉伸以填充容器 */
+  position: absolute;
+  /* filter: brightness(80%); */
   /* z-index:-1; */
 }
 
