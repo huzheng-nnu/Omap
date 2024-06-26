@@ -9,6 +9,7 @@
           </router-link>
           <router-link class="topButton" to="/">主页</router-link>
           <router-link class="topButton" to="/torch-relay">火炬传递</router-link>
+          <router-link class="topButton" to="/event-guide">比赛导览</router-link>
           <router-link class="topButton" to="/athlete-page">奥运预选赛</router-link>
           <router-link class="topButton" to="/olympic-archive">奥运档案馆</router-link>
         </div>
