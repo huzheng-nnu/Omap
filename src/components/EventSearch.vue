@@ -78,13 +78,25 @@
 
   <div class="imgContainer" v-show="!showTabs">
   <div class="contentDiv">
-    <img src="../assets/touch_logo.svg" class="logoImg">
+    <!-- <img src="../assets/touch_logo.svg" class="logoImg"> -->
     
-    <h2 class="titleText" lang="en">Olympic Games Map</h2>
+    <h2 class="titleText" lang="en">比赛导览</h2>
     <div class="contentText">
       <section class="contentSection">
-        <p>
-          The Olympic Games competition map displays the venues and routes of various sports events during the Olympics, providing reference for tourists.
+        <p style="text-indent: 2em;">
+          巴黎奥运会将为世界呈现一场精彩的体育盛会。比赛场馆和路线的精心设计和安排，不仅确保赛事顺利进行，也为观众和游客提供了便利和愉悦的观赛体验。
+        </p>
+
+        <p style="text-indent: 2em;">
+          巴黎奥运会的比赛场馆遍布整个城市及其周边地区，每个场馆都独具特色并充分体现了巴黎的文化与历史。
+        </p>
+
+        <p style="text-indent: 2em;">
+          奥运会比赛路线经过精心规划，贯穿巴黎的各个标志性地点，使得比赛不仅是一场体育盛会，更是一场城市巡礼。
+        </p>
+
+        <p style="text-indent: 2em;">
+          通过交互式地图，查询奥运会比赛场馆和路线的详细信息。
         </p>
       </section>
     </div>
@@ -157,35 +169,33 @@ export default {
 
   methods: {
     search() {
-      if (this.activeTab == '比赛路线') {
-    this.searchResults = this.geojsonData.features.filter(feature => {
-        const { 关键词, 项目名 } = feature.properties;
-        switch (this.activeTab) {
-            case '比赛路线':
-                return 关键词.toLowerCase().includes(this.searchText.toLowerCase()) || 项目名.toLowerCase().includes(this.searchText.toLowerCase());
-            default:
-                return false;
-        }
-    });
-} else if (this.activeTab == '比赛场馆'){
-  this.searchResults = this.geojsonData1.features.filter(feature => {
-        const { 比赛项目, 场馆名 } = feature.properties;
-        return (
-            比赛项目.toLowerCase().includes(this.searchText.toLowerCase()) ||
-            场馆名.toLowerCase().includes(this.searchText.toLowerCase()) 
-        );
-    });  
-}
-  else {
-    // 处理当 geojsonData1 为空或未定义的情况，可以进行一些默认操作或给出错误提示
-    this.searchResults = [];}
-    
-  if (this.activeTab !== '比赛场馆') {
-    this.searchResults.sort((a, b) => a.properties.type - b.properties.type);
-  }
+    if (this.activeTab == '比赛路线') {
+        this.searchResults = this.geojsonData.features.filter(feature => {
+            const { 关键词, 项目名 } = feature.properties;
+            return (
+                (关键词 && 关键词.toLowerCase().includes(this.searchText.toLowerCase())) ||
+                (项目名 && 项目名.toLowerCase().includes(this.searchText.toLowerCase()))
+            );
+        });
+    } else if (this.activeTab == '比赛场馆') {
+        this.searchResults = this.geojsonData1.features.filter(feature => {
+            const { 比赛项目, 场馆名 } = feature.properties;
+            return (
+                (比赛项目 && 比赛项目.toLowerCase().includes(this.searchText.toLowerCase())) ||
+                (场馆名 && 场馆名.toLowerCase().includes(this.searchText.toLowerCase()))
+            );
+        });
+    } else {
+        // 处理当 geojsonData1 为空或未定义的情况，可以进行一些默认操作或给出错误提示
+        this.searchResults = [];
+    }
 
-      this.searchClicked = true; // 设置为 true，表示搜索已点击
-    },
+    if (this.activeTab !== '比赛场馆') {
+        this.searchResults.sort((a, b) => a.properties.type - b.properties.type);
+    }
+
+    this.searchClicked = true; // 设置为 true，表示搜索已点击
+},
 
     setActiveTab(tab) {
       this.activeTab = tab;
@@ -321,6 +331,8 @@ button:hover {
   height: 600px;
   padding: 2.4rem;
   z-index: -1;
+  display: flex; /* 启用 Flexbox 布局 */
+  flex-direction: column; /* 设置子元素按列排列 */
 }
 
 .titleText {
@@ -349,9 +361,10 @@ button:hover {
 
 .contentSection {
   color: rgb(255, 255, 255);
+  text-align: left;
   font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   --box-background: linear-gradient(0deg, #FF5757 0%, #570047 100%);
   margin: 0px auto;
   width: 100%;

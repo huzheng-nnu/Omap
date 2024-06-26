@@ -45,7 +45,6 @@ export default {
     this.map.on('load', () => {
       this.initializeMap();
     });
-    
 
     this.map.on('mousemove', this.handleMapHover);
     this.map.on('click', 'event-venues', (e) => {
@@ -58,8 +57,17 @@ export default {
     this.map.on('mouseleave', 'event-venues', () => {
       this.map.getCanvas().style.cursor = '';
     });
-    
-    console.log(feature);  
+     if(feature!=null)
+      {
+        this.specificFeatureId=feature.properties.编号;
+        console.log(this.specificFeatureId); 
+        this.updatespecificFeatureId();
+        this.linewidthID=-1;
+        this.updateLineWidth();
+        }
+      else{
+    this.specificFeatureId = -1;} 
+ 
   this.handleFeatureClick(feature); // 调用 handleFeatureClick 方法处理点击事件
 });
   this.map.on('click', 'event-routes', (e) => {
@@ -72,7 +80,16 @@ export default {
       this.map.on('mouseleave', 'event-routes', () => {
         this.map.getCanvas().style.cursor = '';
       });
-      
+      if(feature!=null)
+      {
+        this.linewidthID=feature.properties.type;
+        console.log(this.linewidthID); 
+        // 更新地图线的宽度
+        this.updateLineWidth();
+        this.specificFeatureId= -1;
+        this.updatespecificFeatureId();
+      }
+      else{this.linewidthID=-1;}
  
     this.handleFeatureClick1(feature); // 调用 handleFeatureClick 方法处理点击事件
   });
@@ -89,10 +106,15 @@ export default {
   if (clickedOutsideEventLayers) {
     // 执行点击 'event-routes' 或 'event-ents' 图层外部时的操作
     const feature =null;
+    this.linewidthID = -1;
+    this.updateLineWidth();
+    this.specificFeatureId= -1;
+    this.updatespecificFeatureId();
     this.handleFeatureClick(feature);
     this.handleFeatureClick1(feature);
   }
 });
+
   },
   methods: {
     initializeMap() {
@@ -122,8 +144,9 @@ export default {
             ],
         'line-width': [
       'case',
-      ['==', ['get', 'type'], this.linewidthID], 5,  // 当 type 等于 5 时，line-width 设为 5
+      ['==', ['get', 'type'], this.linewidthID], 6,  // 当 type 等于 this.linewidthID 时，line-width 设为 5
       3  // 其他情况下，line-width 设为 3
+
     ],
       },
     });
@@ -135,8 +158,12 @@ export default {
         data: event_venues,
       },
       layout: {
-        'icon-image': 'venueslogo1' ,// 默认的图标名称,
-        'icon-size':0.7
+        'icon-image':[
+      'case',
+      ['==', ['get', '编号'], this.specificFeatureId], 'venueslogo2','venueslogo1' ],// 默认的图标名称,
+        'icon-size':[
+      'case',
+      ['==', ['get', '编号'], this.specificFeatureId], 0.75,0.7 ]
         // 图片的名称，需要事先添加到 Mapbox 的样式中
       },
       paint: {
@@ -144,9 +171,34 @@ export default {
       },
     });
 
-
+    
 
     },
+    updatespecificFeatureId() {
+  const layerId = 'event-venues';
+  // 设置 'icon-image' 属性
+  this.map.setLayoutProperty(layerId, 'icon-image', [
+    'case',
+    ['==', ['get', '编号'], this.specificFeatureId], 'venueslogo2', 'venueslogo1'
+  ]);
+  this.map.setLayoutProperty(layerId, 'icon-size', [
+    'case',
+    ['==', ['get', '编号'], this.specificFeatureId], 0.75, 0.7
+  ]);
+},
+          // 更新地图线宽度的方法
+    updateLineWidth() {
+        // 获取地图中的图层
+        const layerId = 'event-routes';
+        // 设置 'img' 属性
+      this.map.setPaintProperty(layerId, 'line-width', [
+          'case',
+          ['==', ['get', 'type'], this.linewidthID], 6,  // 当 type 等于 this.linewidthID 时，line-width 设为 5
+          3  // 其他情况下，line-width 设为 3
+        ]);
+        
+      },
+     
 
     showFeatureInfo(feature) {
       // 悬停特征时更新悬停的特征信息，但仅当没有点击的特征时才更新
@@ -164,24 +216,6 @@ export default {
       // 点击特征时更新点击的特征信息
       this.clickedFeature = feature;
       EventBus1.emit('detailed-result-updated1', feature);
-      if(feature!=null)
-      {
-      const clickedFeatureId = feature.properties.编号;
-      // 获取当前地图上所有 'event-venues' 图层的所有特征
-      const allFeatures = this.map.querySourceFeatures('event-venues');
-
-      // 遍历所有特征，并根据条件设置不同的 iconImage
-      for (let i = 0; i < allFeatures.length; i++) {
-        const f = allFeatures[i];
-        const id = f.properties.编号; // 假设特征有唯一标识符 id
-        const iconImage = id === clickedFeatureId ? 'venueslogo1' : 'venueslogo2';
-
-        this.map.setFeatureState(
-          { source: 'event-venues', id },
-          { iconImage }
-        );}
-      // 获取被点击特征的唯一标识符，
-      this.specificFeatureId = feature.properties.编号;}
       
 
     },
@@ -189,12 +223,6 @@ export default {
     // 点击特征时更新点击的特征信息
       this.clickedFeature = feature;
       EventBus2.emit('detailed-result-updated2', feature);
-      if(feature!=null)
-      {
-        this.linewidthID=feature.properties.type;
-      }
-      else{this.linewidthID=-1;}
-  
       
 
     },

@@ -83,11 +83,11 @@
   <div class="contentDiv">
     <img src="../assets/touch_logo.svg" class="logoImg">
     
-    <h2 class="titleText" lang="en">Olympic Torch Relay Stages</h2>
+    <h2 class="titleText" lang="en">火炬传递</h2>
     <div class="contentText">
       <section class="contentSection">
-        <p>
-          A symbol of unity and peace, the Olympic torch spreads the spirit of the Games as it travels around the country, marking the start of celebrations. For the Paris 2024 Olympic Games, the Olympic Torch Relay will take place over a three-month period.
+        <p style="text-indent: 2em;">
+          象征着团结与和平的奥运火炬将在三个月的时间内，穿越法国的各个角落，传递奥林匹克精神。这次火炬传递不仅是一项体育盛事，更是一次文化交流和庆祝活动，将把奥运的激情与梦想带给每一个人。在火炬传递的过程中，公众将有机会近距离感受奥运精神，参与到这场全球瞩目的盛会中来。巴黎2024年奥运会火炬传递，将为奥运庆典拉开帷幕，点燃全世界的热情与希望。
         </p>
       </section>
     </div>
@@ -311,6 +311,8 @@ button:hover {
   height: 600px;
   padding: 2.4rem;
   z-index: -1;
+  display: flex; /* 启用 Flexbox 布局 */
+  flex-direction: column; /* 设置子元素按列排列 */
 }
 
 .titleText {
@@ -346,6 +348,7 @@ button:hover {
   margin: 0px auto;
   width: 100%;
   overflow-wrap: break-word;
+  text-align: left;
 }
 .logoImg {
   position: relative;

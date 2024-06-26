@@ -135,7 +135,9 @@ export default {
           'text-allow-overlap': false
         },
         paint: {
-          'text-color': '#000'
+          'text-color': '#000',
+          'text-halo-color': '#ffffff',
+          'text-halo-width': 1
         }
       });
 
@@ -212,7 +214,7 @@ export default {
       }
 
       var speed = 10;
-      if (flag === 1) { speed = 40; }
+      if (flag === 1) { speed = 80; }
 
       for (var i = 0; i < coordinates.length - 1; i++) {
         var segment = this.interpolateCoords(coordinates[i], coordinates[i + 1], speed);
@@ -490,7 +492,7 @@ export default {
 .fire-marker {
   width: 100px;
   height: 100px;
-  background-image: url('@/fire.png'); /* 根据你的火炬图标路径调整 */
+  /* background-image: url('@/fire.png');  */
   background-size: cover;
   border-radius: 50%;
   position: absolute;
